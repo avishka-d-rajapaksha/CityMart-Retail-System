@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sales Report - City Mart</title>
+<style>
+  @page { size: A4; margin: 12mm; }
+  .page { width: 180mm; margin: 0 auto; box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    /* CITY MART THEME COLORS */
+    --blue: #0056b3;
+    --blue-light: #eef2f5;
+    --orange: #ff8c00;
+    --text: #333;
+    --muted: #666;
+    --line: #ddd;
+    --bg-light: #f9f9f9;
+  }
+  
+  body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--text);
+    margin: 0; padding: 0;
+  }
+  
+  /* Header */
+  .header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0; border-bottom: 3px solid var(--blue);
+    margin-bottom: 20px;
+  }
+  
+  .logo { height: 50px; width: auto; }
+  
+  .brand-info { text-align: right; }
+  .brand-name { font-size: 24px; font-weight: 800; color: var(--blue); margin: 0; }
+  .brand-sub { font-size: 12px; color: var(--orange); letter-spacing: 1px; font-weight: bold; text-transform: uppercase; }
+
+  /* Info Bar */
+  .info-bar {
+    background: var(--blue-light);
+    padding: 15px 20px;
+    border-left: 5px solid var(--blue);
+    border-radius: 4px;
+    display: flex; justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  
+  .info-item { display: flex; flex-direction: column; }
+  .info-label { font-size: 10px; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 3px; }
+  .info-value { font-size: 14px; font-weight: 600; color: var(--text); }
+
+  /* Data Table */
+  .data-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+  
+  .data-table th {
+    background: var(--blue); color: white;
+    padding: 10px; text-align: left; font-size: 12px; text-transform: uppercase;
+  }
+  
+  .data-table td {
+    padding: 10px; border-bottom: 1px solid var(--line); font-size: 13px;
+  }
+  
+  .data-table tr:nth-child(even) { background: var(--bg-light); }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .font-bold { font-weight: 700; }
+
+  /* Summary Section */
+  .totals-section {
+    background: var(--bg-light);
+    padding: 20px; border-radius: 6px;
+    border: 1px solid var(--line);
+    width: 50%; margin-left: auto;
+  }
+  
+  .total-row {
+    display: flex; justify-content: space-between;
+    margin-bottom: 8px; font-size: 14px;
+  }
+  
+  .grand-total {
+    font-size: 18px; font-weight: 800; color: var(--blue);
+    border-top: 2px solid var(--line);
+    padding-top: 10px; margin-top: 5px;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 40px; text-align: center;
+    border-top: 1px solid var(--line);
+    padding-top: 15px; font-size: 11px; color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+  <div class="page">
+    <div class="header">
+      <img class="logo" src="logo.png" alt="City Mart Logo">
+      <div class="brand-info">
+        <div class="brand-name">CITY MART</div>
+        <div class="brand-sub">Inventory & Sales Management System</div>
+      </div>
+    </div>
+
+    <div class="info-bar">
+      <div class="info-item">
+        <span class="info-label">Report Type</span>
+        <span class="info-value">Sales Summary</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Date Range</span>
+        <span class="info-value">{{fromDate}} to {{toDate}}</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Generated On</span>
+        <span class="info-value">{{generatedDate}}</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Total Records</span>
+        <span class="info-value">{{totalRecords}}</span>
+      </div>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th width="15%">ID</th>
+          <th width="30%">Date</th>
+          <th width="25%">Cashier/Item</th>
+          <th width="30%" class="text-right">Amount (Rs)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{tableRows}}
+      </tbody>
+    </table>
+
+    <div class="totals-section">
+      <div class="total-row">
+        <span>Total Revenue:</span>
+        <span class="font-bold">Rs. {{totalRevenue}}</span>
+      </div>
+      <div class="total-row grand-total">
+        <span>NET TOTAL:</span>
+        <span>Rs. {{totalRevenue}}</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      Generated automatically by City Mart System.<br>
+      123 Main Street, Colombo | Contact: +94 11 234 5678
+    </div>
+  </div>
+
+</body>
+</html>

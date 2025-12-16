@@ -1,0 +1,66 @@
+Dec 04, 2025 11:08:12 PM com.inventory.util.LoggerUtil logInfo
+INFO: Email Sent: ? Login Alert: a
+Dec 04, 2025 11:08:51 PM com.inventory.util.LoggerUtil logInfo
+INFO: Email Sent: ? Report: Low Stock Alerts
+Dec 04, 2025 11:09:19 PM com.inventory.util.LoggerUtil logInfo
+INFO: Email Sent: ? Report: Product Performance Report
+Dec 04, 2025 11:45:11 PM com.inventory.util.LoggerUtil logInfo
+INFO: Email Sent: ? Login Alert: a
+Dec 04, 2025 11:46:46 PM com.inventory.util.LoggerUtil logInfo
+INFO: Email Sent: ?? Low Stock Alert: ciggerte
+Dec 04, 2025 11:48:29 PM com.inventory.util.LoggerUtil logInfo
+INFO: Email Sent: Report: Inventory Valuation
+Dec 04, 2025 11:48:36 PM com.inventory.util.LoggerUtil logInfo
+INFO: Email Sent: Report: Product Performance Report
+Dec 04, 2025 11:49:34 PM com.inventory.util.LoggerUtil logInfo
+INFO: Email Sent: Report: Product Performance Report
+Dec 14, 2025 3:38:18 PM com.inventory.util.LoggerUtil logError
+SEVERE: Email Failed
+com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.gmail.com, 587; timeout -1;
+  nested exception is:
+	java.net.UnknownHostException: smtp.gmail.com
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2209)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:740)
+	at javax.mail.Service.connect(Service.java:388)
+	at javax.mail.Service.connect(Service.java:246)
+	at javax.mail.Service.connect(Service.java:195)
+	at javax.mail.Transport.send0(Transport.java:254)
+	at javax.mail.Transport.send(Transport.java:124)
+	at com.inventory.service.EmailService.sendEmail(EmailService.java:143)
+	at com.inventory.service.EmailService.lambda$sendLoginAlert$2(EmailService.java:87)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.UnknownHostException: smtp.gmail.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:572)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at java.base/java.net.Socket.connect(Socket.java:583)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:359)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:238)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2175)
+	... 9 more
+
+Dec 14, 2025 3:42:26 PM com.inventory.util.LoggerUtil logError
+SEVERE: Email Failed
+com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.gmail.com, 587; timeout -1;
+  nested exception is:
+	java.net.UnknownHostException: smtp.gmail.com
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2209)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:740)
+	at javax.mail.Service.connect(Service.java:388)
+	at javax.mail.Service.connect(Service.java:246)
+	at javax.mail.Service.connect(Service.java:195)
+	at javax.mail.Transport.send0(Transport.java:254)
+	at javax.mail.Transport.send(Transport.java:124)
+	at com.inventory.service.EmailService.sendEmail(EmailService.java:143)
+	at com.inventory.service.EmailService.lambda$sendLowStockAlert$1(EmailService.java:75)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: java.net.UnknownHostException: smtp.gmail.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:572)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at java.base/java.net.Socket.connect(Socket.java:583)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:359)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:238)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2175)
+	... 9 more
+
